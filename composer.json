@@ -1,0 +1,51 @@
+{
+  "name": "thomascarter.net",
+  "type": "project",
+  "license": "MIT",
+  "description": "Built with Roots.io",
+  "homepage": "http://www.thomascarter.net",
+  "author": "Thomas Carter",
+  "config": {
+    "preferred-install": "dist"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "composer/installers": "~1.0.12",
+    "vlucas/phpdotenv": "^2.0.1",
+    "johnpbloch/wordpress": "4.6.1",
+    "oscarotero/env": "^1.0",
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/bbpress": "2.5.10",
+    "wpackagist-plugin/akismet": "3.2",
+    "wpackagist-plugin/newsletter": "4.6.0",
+    "wpackagist-plugin/ninja-forms": "3.0.5",
+    "wpackagist-plugin/testimonials-widget": "3.3.3",
+    "wpackagist-plugin/the-events-calendar": "4.2.7",
+    "wpackagist-plugin/woocommerce": "2.6.4",
+    "wpackagist-plugin/woocommerce-gateway-stripe": "3.0.2",
+    "wpackagist-plugin/woocommerce-gateway-paypal-powered-by-braintree": "1.2.4",
+    "wpackagist-plugin/wordpress-seo": "3.5"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^2.5.1"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpcs --ignore=web/wp/,vendor/ -n -s ."
+    ]
+  }
+}
